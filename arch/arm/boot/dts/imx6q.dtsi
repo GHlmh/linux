@@ -162,11 +162,19 @@
 				     <0 7 IRQ_TYPE_LEVEL_HIGH>;
 			clocks = <&clks IMX6QDL_CLK_IPU2>,
 				 <&clks IMX6QDL_CLK_IPU2_DI0>,
+                                 <&clks IMX6QDL_CLK_IPU2_DI1>, //++
+                                 <&clks IMX6QDL_CLK_IPU2_DI0_SEL>, //++
+                                 <&clks IMX6QDL_CLK_IPU2_DI1_SEL>, //++
+                                 <&clks IMX6QDL_CLK_LDB_DI0>, //++
+                                 <&clks IMX6QDL_CLK_LDB_DI1>, //++
 				 <&clks IMX6QDL_CLK_IPU2_DI1>;
-			clock-names = "bus", "di0", "di1";
+			clock-names = "bus", "di0", "di1"
+                                      "di0_sel", "di1_sel", //++
+                                      "ldb_di0", "ldb_di1"; //++
 			resets = <&src 4>;
+                        bypass_reset =<0>; //++
 
-			ipu2_csi0: port@0 {
+			/*ipu2_csi0: port@0 {
 				reg = <0>;
 			};
 
@@ -217,7 +225,7 @@
 				ipu2_di1_lvds1: endpoint@4 {
 					remote-endpoint = <&lvds1_mux_3>;
 				};
-			};
+			};*/
 		};
 	};
 
