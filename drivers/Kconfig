@@ -102,7 +102,7 @@ source "drivers/mmc/Kconfig"
 
 source "drivers/memstick/Kconfig"
 
-source "drivers/mxc/Konfig"
+source "drivers/mxc/Kconfig"
 
 source "drivers/leds/Kconfig"
 
